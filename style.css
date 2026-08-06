@@ -101,6 +101,9 @@ li { margin: 4px 0; }
 
 a { color: var(--selected); text-decoration: underline; text-underline-offset: 2px; }
 
+/* 이메일은 하이픈(tr_cycle-)에서 줄이 끊기지 않게 한 덩어리로 유지 */
+a[href^="mailto:"] { white-space: nowrap; }
+
 /* 표 */
 table {
   width: 100%;
