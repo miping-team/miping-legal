@@ -1,0 +1,11 @@
+# Vercel (프로젝트 링크 — 절대 커밋 금지)
+.vercel
+
+# 환경변수
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db

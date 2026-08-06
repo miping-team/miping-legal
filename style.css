@@ -1,0 +1,149 @@
+/* 미핑 색·타이포 토큰 — lib/theme/app_colors.dart, app_typography.dart 와 동일하게 맞춤 */
+:root {
+  --bg: #FCF9F6;          /* background — 따뜻한 화이트 */
+  --surface: #FFFFFF;     /* surface — 카드 면 */
+  --point: #FFC8B6;       /* brandPoint — 살구/코랄 */
+  --line: #5C4F44;        /* brandLine — 진한 브라운 (선/브랜드) */
+  --text-strong: #2B2622; /* textStrong — 제목/본문 */
+  --text-muted: #A69E95;  /* textMuted — 보조 텍스트 */
+  --outline: #D9D2CA;     /* outline — 테두리 */
+  --selected: #53453A;    /* selected — 강조 링크 */
+  --field: #F4F1ED;       /* searchField — 옅은 면 */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-strong);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", "Noto Sans KR", "Pretendard", "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 72px;
+}
+
+/* 상단 브랜드 */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 20px;
+}
+.brand .dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--point);
+  border: 2px solid var(--line);
+  flex: none;
+}
+.brand .name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--line);
+}
+
+/* 문서 카드 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-strong);
+  margin: 0 0 6px;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 32px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--outline);
+}
+h2:first-of-type { border-top: none; padding-top: 0; }
+
+h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--selected);
+  margin: 20px 0 6px;
+}
+
+p, li { color: var(--text-strong); }
+.muted { color: var(--text-muted); }
+
+ul, ol { padding-left: 22px; margin: 8px 0; }
+li { margin: 4px 0; }
+
+a { color: var(--selected); text-decoration: underline; text-underline-offset: 2px; }
+
+/* 표 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 14px;
+}
+th, td {
+  border: 1px solid var(--outline);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--field); font-weight: 700; }
+
+/* index 링크 카드 */
+.links { list-style: none; padding: 0; margin: 20px 0 0; }
+.links li { margin: 12px 0; }
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: var(--text-strong);
+  font-weight: 700;
+}
+.links a .arrow { color: var(--text-muted); }
+.links a .sub { display: block; font-weight: 400; font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+
+/* 하단 문서 간 이동 */
+.footnav {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--outline);
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 22px 18px; border-radius: 14px; }
+  h1 { font-size: 23px; }
+}
