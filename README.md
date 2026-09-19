@@ -7,9 +7,10 @@
 
 | 파일 | 내용 |
 | --- | --- |
-| `index.html` | 두 문서로 가는 목록 |
+| `index.html` | 정책 문서로 가는 목록 |
 | `privacy.html` | 개인정보처리방침 |
 | `terms.html` | 서비스 이용약관 |
+| `child-safety.html` | 아동 안전 정책 및 신고 연락처 |
 | `style.css` | 공통 색·레이아웃 |
 
 ## 배포
