@@ -1,6 +1,6 @@
 /* 미핑 색·타이포 토큰 — lib/theme/app_colors.dart, app_typography.dart 와 동일하게 맞춤 */
 :root {
-  --bg: #FCF9F6;          /* background — 따뜻한 화이트 */
+  --bg: #FFFFFF;          /* 배경 — 흰색 */
   --surface: #FFFFFF;     /* surface — 카드 면 */
   --point: #FFC8B6;       /* brandPoint — 살구/코랄 */
   --line: #5C4F44;        /* brandLine — 진한 브라운 (선/브랜드) */
@@ -150,3 +150,31 @@ th { background: var(--field); font-weight: 700; }
   .card { padding: 22px 18px; border-radius: 14px; }
   h1 { font-size: 23px; }
 }
+
+/* ---- 모션 ---- */
+.brand { text-decoration: none; width: fit-content; transition: opacity .2s; }
+.brand:hover { opacity: .75; }
+.brand .dot { transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+.brand:hover .dot { transform: scale(1.2); }
+
+.card { animation: up .6s cubic-bezier(.22,1,.36,1) both; }
+.brand { animation: up .5s cubic-bezier(.22,1,.36,1) both; }
+@keyframes up { from { opacity: 0; transform: translateY(14px); } }
+
+.rv { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1); }
+.rv.in { opacity: 1; transform: none; }
+.links li:nth-child(2) { transition-delay: .06s; }
+.links li:nth-child(3) { transition-delay: .12s; }
+
+.links a { transition: transform .2s, border-color .2s, box-shadow .2s, background .2s; }
+.links a:hover { transform: translateY(-2px); border-color: var(--point); box-shadow: 0 6px 18px rgba(92,79,68,.08); }
+.links a .arrow { transition: transform .2s; }
+.links a:hover .arrow { transform: translateX(4px); }
+a { transition: color .15s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .rv { opacity: 1; transform: none; }
+}
+/* JS 꺼진 환경에서도 내용이 보이게 */
+@media (scripting: none) { .rv { opacity: 1; transform: none; } }
